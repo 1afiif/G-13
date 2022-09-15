@@ -11,7 +11,7 @@ margin: 14em auto;
 
 export const Wrapper = styled.div`
 display: flex;
-gap: 9em;
+gap: 8em;
 `
 export const Button = styled.button`
   border-style: none;
