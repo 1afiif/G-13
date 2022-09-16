@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { ReactComponent as Vector } from '../../assets/Vector.svg'
 import { ReactComponent as Houzing } from '../../assets/Houzing.svg'
 
+export const Vector = styled(Vector)``
+
 export const MainContainer = styled.div`
   background: #0d263b; 
   width: 100vw;
