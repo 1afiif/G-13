@@ -1,12 +1,18 @@
 import React from 'react'
-import { IconContainer, MainContainer } from './style'
+import { Houzin, IconContainer, MainContainer, TextContainer, Vecto } from './style'
 
 const Navbar = () => {
   return (
     <MainContainer>
           <IconContainer>
-              
-      </IconContainer>
+              <Vecto />
+              <Houzin/>
+          </IconContainer>
+      <TextContainer>
+        <p>Home</p>
+        <p>Properties</p>
+        <p>Contacts</p>
+          </TextContainer>
     </MainContainer>
   )
 }

@@ -1,13 +1,10 @@
-import Image from '../src/assets/image.png'
-import Image2 from '../src/assets/image1.png'
-import Image3 from '../src/assets/image2.png'
 
-export const data = [
+const data = [
   {
     id: 1,
-    img: { Image },
+    img: 'https://www.volunteersiding.com/wp-content/uploads/Depositphotos_7896879_xl-2015-1.jpg',
     info: {
-      name: 'New Apartment Nice View',
+      name: 'Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '8',
@@ -19,9 +16,9 @@ export const data = [
   },
   {
     id: 2,
-    img: { Image2 },
+    img: `https://i.pinimg.com/originals/d9/2c/f7/d92cf790dc38f59e11aeb9130ecb31b4.jpg`,
     info: {
-      name: 'New Apartment Nice View',
+      name: 'Constructed Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '10',
@@ -33,9 +30,9 @@ export const data = [
   },
   {
     id: 3,
-    img: { Image3 },
+    img: 'https://nebula.wsimg.com/1ba60617fd15d7e31a198bc80e060064?AccessKeyId=4D1DBF512EB67D43EB62&disposition=0&alloworigin=1',
     info: {
-      name: 'New Apartment Nice View',
+      name: 'Old-Fashioned Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '5',
@@ -47,9 +44,9 @@ export const data = [
   },
   {
     id: 4,
-    img: { Image },
+    img: 'https://www.volunteersiding.com/wp-content/uploads/Depositphotos_7896879_xl-2015-1.jpg',
     info: {
-      name: 'New Apartment Nice View',
+      name: 'High-Tech Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '4',
@@ -61,7 +58,7 @@ export const data = [
   },
   {
     id: 5,
-    img: { Image2 },
+    img: `https://i.pinimg.com/originals/d9/2c/f7/d92cf790dc38f59e11aeb9130ecb31b4.jpg`,
     info: {
       name: 'New Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
@@ -75,9 +72,9 @@ export const data = [
   },
   {
     id: 6,
-    img: { Image },
+    img: 'https://nebula.wsimg.com/1ba60617fd15d7e31a198bc80e060064?AccessKeyId=4D1DBF512EB67D43EB62&disposition=0&alloworigin=1',
     info: {
-      name: 'New Apartment Nice View',
+      name: 'Ordinary Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '4',
@@ -89,9 +86,9 @@ export const data = [
   },
   {
     id: 7,
-    img: { Image },
+    img: 'https://www.volunteersiding.com/wp-content/uploads/Depositphotos_7896879_xl-2015-1.jpg',
     info: {
-      name: 'New Apartment Nice View',
+      name: 'Studio Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '4',
@@ -103,7 +100,7 @@ export const data = [
   },
   {
     id: 8,
-    img: { Image2 },
+    img: `https://i.pinimg.com/originals/d9/2c/f7/d92cf790dc38f59e11aeb9130ecb31b4.jpg`,
     info: {
       name: 'New Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
@@ -117,9 +114,9 @@ export const data = [
   },
   {
     id: 9,
-    img: { Image },
+    img: 'https://nebula.wsimg.com/1ba60617fd15d7e31a198bc80e060064?AccessKeyId=4D1DBF512EB67D43EB62&disposition=0&alloworigin=1',
     info: {
-      name: 'New Apartment Nice View',
+      name: 'Officetel Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '4',
@@ -131,9 +128,9 @@ export const data = [
   },
   {
     id: 10,
-    img: { Image2 },
+    img: 'https://www.volunteersiding.com/wp-content/uploads/Depositphotos_7896879_xl-2015-1.jpg',
     info: {
-      name: 'New Apartment Nice View',
+      name: 'Penthouse Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '4',
@@ -145,9 +142,9 @@ export const data = [
   },
   {
     id: 11,
-    img: { Image },
+    img: `https://i.pinimg.com/originals/d9/2c/f7/d92cf790dc38f59e11aeb9130ecb31b4.jpg`,
     info: {
-      name: 'New Apartment Nice View',
+      name: 'Sky Villa Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '4',
@@ -159,9 +156,9 @@ export const data = [
   },
   {
     id: 12,
-    img: { Image2 },
+    img: 'https://nebula.wsimg.com/1ba60617fd15d7e31a198bc80e060064?AccessKeyId=4D1DBF512EB67D43EB62&disposition=0&alloworigin=1',
     info: {
-      name: 'New Apartment Nice View',
+      name: 'Duplex Apartment Nice View',
       location: 'Quincy St, Brooklyn, NY, USA',
       property: {
         bed: '4',
@@ -172,3 +169,5 @@ export const data = [
     },
   },
 ];
+
+export default data ;
