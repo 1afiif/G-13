@@ -13,7 +13,7 @@ class Body extends Component {
 
   render() {
     const onChange = (e) => {
-      let result = Data.filter(({ id, info }) => info.name.toLowerCase().includes(e.target?.value));
+      let result = Data.filter(({ id, info }) => info.name.toLowerCase().includes(e.target?.value.toLowerCase()));
       this.setState({ houzing: result });
     }
     return (
