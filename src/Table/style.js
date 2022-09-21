@@ -65,6 +65,7 @@ export const Button = styled.button`
   font-size: 20px;
   transition: transform 0.3s ease-in-out;
   margin-bottom: 10px;
+  cursor: pointer;
   :active {
     transform: scale(0.8);
   }

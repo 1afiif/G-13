@@ -10,10 +10,9 @@ import {
   AddWrapper,
   AddBtn,
   Button,
-  Trash
+  Trash,
 } from './style';
 import Data from '../data.js';
-
 
 class Table extends React.Component {
   constructor(props) {
@@ -52,10 +51,10 @@ class Table extends React.Component {
       this.setState({ language: [...this.state.language, newUser], name: '' });
     };
 
-      const onDelete = (id) => {
-          let result = this.state.language.filter((value) => value.id !== id);
-          this.setState({ language: result });
-    }
+    const onDelete = (id) => {
+      let result = this.state.language.filter((value) => value.id !== id);
+      this.setState({ language: result });
+    };
     return (
       <Container>
         <Title>React JS</Title>
@@ -69,32 +68,37 @@ class Table extends React.Component {
         <DataWrapper>
           <TableContent border={1}>
             <tbody>
-              {
-              this.state.language.length ? ( 
-              this.state.language.map(({ id, name }) => {
-                return (
-                  <tr
-                    key={id}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      height: '50px',
-                      border: '1px solid black',
-                    }}
-                  >
-                    <td style={{ flex: '1', width: '40px' }}>{id}</td>
-                    <td style={{ flex: '6' }}>{name}</td>
-                    <td style={{ flex: '2', width: '80px' }}>
-                      <Button onClick={() => onDelete(id)}><Trash/></Button>
-                    </td>
-                    <td>
-                      <Button>Edit</Button>
-                    </td>
-                  </tr>
-                );
-              })
-              ) : <h4>No Data Found</h4>
-            }
+              {this.state.language.length ? (
+                this.state.language.map(({ id, name }) => {
+                  return (
+                    <tr
+                      key={id}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        height: '50px',
+                        border: '1px solid black',
+                      }}
+                    >
+                      <td style={{ flex: '1', width: '40px' }}>{id}</td>
+                      <td style={{ flex: '6' }}>{name}</td>
+                      <td style={{ flex: '2', width: '80px' }}>
+                        <Button
+                          style={{ backgroundColor: 'white' }}
+                          onClick={() => onDelete(id)}
+                        >
+                          <Trash />
+                        </Button>
+                      </td>
+                      <td>
+                        <Button>Edit</Button>
+                      </td>
+                    </tr>
+                  );
+                })
+              ) : (
+                <h4>No Data Found</h4>
+              )}
             </tbody>
           </TableContent>
         </DataWrapper>
