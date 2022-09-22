@@ -69,7 +69,7 @@ class Table extends React.Component {
           <TableContent border={1}>
             <tbody>
               {this.state.language.length ? (
-                this.state.language.map(({ id, name }) => {
+                this.state.language.map(({id,name},index) => {
                   return (
                     <tr
                       key={id}
@@ -80,7 +80,7 @@ class Table extends React.Component {
                         border: '1px solid black',
                       }}
                     >
-                      <td style={{ flex: '1', width: '40px' }}>{id}</td>
+                      <td style={{ flex: '1', width: '40px' }}>{index + 1}</td>
                       <td style={{ flex: '6' }}>{name}</td>
                       <td style={{ flex: '2', width: '80px' }}>
                         <Button
