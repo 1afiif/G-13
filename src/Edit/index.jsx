@@ -1,14 +1,24 @@
 import React, { Component } from 'react'
 import Data from '../data.js';
-//21:36minut
+
 class Index extends Component {
   constructor(props) {
   super(props);
   this.state = {
-    fruits:Data,
+    fruits: Data,
+    selected: {},
+    name:''
   }  
   }
   render() {
+    const onChange = (e) => {
+      const { value, name } = e;
+      this.setState({ [name]: value });
+    }
+
+    const onEdit = (value) => {
+      this.setState({ selected: value });
+    }
     return (
     <div>
     <table>
@@ -16,6 +26,7 @@ class Index extends Component {
     <tr>
     <th>ID</th>
     <th>Name</th>
+    <th>Action</th>
     </tr>           
     </thead>
     <tbody>
@@ -23,7 +34,16 @@ class Index extends Component {
         this.state.fruits.map((value) => (
          <tr key={value.id}>
            <th>{value.id}</th>         
-           <th>{value.name}</th>         
+            <th>
+            {
+            this.state.selected.id === value.id ? <input name='name' onChange={onChange} value={this.state.selected.name} type="text" /> : value.name    
+            }
+            </th>  
+           <th>
+           {
+            this.state.selected.id === value.id ? <button>Save</button> : <button onClick={() => onEdit(value)}>Edit</button>
+           }
+           </th> 
          </tr>
             ))
         }
