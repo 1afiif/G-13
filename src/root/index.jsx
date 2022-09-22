@@ -1,8 +1,11 @@
 import React from 'react'
+import Edit from '../Edit'
 
 const Root = () => {
   return (
-    <>Root</>
+    <>
+    <Edit/>
+    </>
   )
 }
 

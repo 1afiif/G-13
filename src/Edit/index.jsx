@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Data from '../data.js';
-
+//21:36minut
 class Index extends Component {
   constructor(props) {
   super(props);
@@ -21,7 +21,7 @@ class Index extends Component {
     <tbody>
         {
         this.state.fruits.map((value) => (
-         <tr>
+         <tr key={value.id}>
            <th>{value.id}</th>         
            <th>{value.name}</th>         
          </tr>
