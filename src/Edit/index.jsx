@@ -3,21 +3,25 @@ import Data from '../data.js';
 
 class Index extends Component {
   constructor(props) {
-  super(props);
-  this.state = {
-    fruits: Data,
-    selected: {},
-    name:''
-  }  
+    super(props);
+    this.state = {
+      fruits: Data,
+      selected: {},
+      name:''
+    }
   }
   render() {
-    const onChange = (e) => {
-      const { value, name } = e;
-      this.setState({ [name]: value });
-    }
-
     const onEdit = (value) => {
       this.setState({ selected: value });
+    }
+
+    const onChange = (e) => {
+      const { value } = e.target;
+      this.setState({ name : value });
+    }
+
+    const onSave = () => {
+      this.setState({ selected: this.state.name });
     }
     return (
     <div>
@@ -30,23 +34,23 @@ class Index extends Component {
     </tr>           
     </thead>
     <tbody>
-        {
-        this.state.fruits.map((value) => (
+       {
+         this.state.fruits.map((value) => (
          <tr key={value.id}>
-           <th>{value.id}</th>         
-            <th>
-            {
-            this.state.selected.id === value.id ? <input name='name' onChange={onChange} value={this.state.selected.name} type="text" /> : value.name    
-            }
-            </th>  
-           <th>
-           {
-            this.state.selected.id === value.id ? <button>Save</button> : <button onClick={() => onEdit(value)}>Edit</button>
-           }
-           </th> 
+         <td>{value.id}</td>
+         <td>
+          {
+          this.state.selected.id === value.id ? <input name='name' type="text" onChange={onChange} value={this.state.name}/> : value.name
+          }
+         </td>
+         <td>
+         {
+          this.state.selected.id === value.id ? <button onClick={onSave}>Save</button> : <button onClick={() => onEdit(value)}>Edit</button> 
+         }
+         </td>
          </tr>
-            ))
-        }
+        ))
+       }
     </tbody>
     </table>    
     </div>
