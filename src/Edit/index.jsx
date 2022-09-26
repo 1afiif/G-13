@@ -38,7 +38,7 @@ class Index extends Component {
     }
     
     const Delete = (id) => {
-      let result = this.state.mockData.map((value) => value.id !== id);
+      let result = this.state.mockData.filter((value) => value.id !== id);
       this.setState({ mockData: result });
     }
     return (
