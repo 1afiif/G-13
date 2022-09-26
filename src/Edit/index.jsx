@@ -11,14 +11,14 @@ class Index extends Component {
     }
   }
   render() {
-    const editFunct = (id,name,userName) => {
+    const editFunc = (id,name,userName) => {
       this.setState({
         mockData: this.state.mockData.map((value) => ({
           id: value.id,
           name: value.name,
           userName: value.userName,
-          hidden:value.id === id ? true : false
-        }))
+          hidden: value.id === id ? true : false
+       }))
       })
       this.setState({
         name: name,
@@ -31,50 +31,49 @@ class Index extends Component {
         mockData: this.state.mockData.map((value) => ({
           id: value.id,
           name: value.id === id ? this.state.name : value.name,
-          userName:value.id === id ? this.state.userName : value.userName,
-          hidden: false
-       }))
-     })
+          userName: value.id === id ? this.state.userName : value.userName,
+          hidden:false
+        }))
+      })
     }
     
+    const Delete = (id) => {
+      let result = this.state.mockData.map((value) => value.id !== id);
+      this.setState({ mockData: result });
+    }
     return (
-    <div>
-    <table>
-    <thead>
-    <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>userName</th>
-    <th>Action</th>
-    </tr>           
-    </thead>
-    <tbody>
-       {
-         this.state.mockData.map((value) => (
-         <tr key={value.id}>
-         <td>{value.id}</td>
-             <td>
-               {
-                 value.hidden ? <input type={'text'} value={this.state.name} onChange={(e) => this.setState({name:e.target?.value})} /> : <h3>{value.name}</h3>
-               }
-             </td>
-             <td>
-               {
-                 value.hidden ? <input type={'text'} value={this.state.userName} onChange={(e) => this.setState({userName:e.target?.value})} /> : <h3>{value.userName}</h3>
-               }
-             </td>
-             <td>
-               {
-               value.hidden ? <button onClick={() => onSave(value.id)}>Save</button> : <button onClick={() => editFunct(value.id,value.name,value.userName)}>Edit</button>
-               }
-             </td>
-         </tr>
-        ))
-       }
-    </tbody>
-    </table>    
-    </div>
-    )
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>userName</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.mockData.map((value) => (
+              <tr key={value.id}>
+                <td>{value.id}</td>
+                <td>{value.hidden ? <input type='text' value={this.state.name} onChange={(e) => this.setState({name:e.target?.value})} /> : value.name}</td>
+                <td>
+                  {value.hidden ? <input type={'text'} value={this.state.userName} onChange={(e) => this.setState({userName:e.target?.value})} /> : value.userName}
+                </td>
+                <td>
+                  {value.hidden ? (
+                    <button onClick={() => onSave(value.id)}>Save</button>
+                  ) : (
+                    <button onClick={() => editFunc(value.id,value.name,value.userName)}>Edit</button>
+                  )}
+                </td>
+                <td><button onClick={() => Delete(value.id)}>Delete</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
   }
 }
 
