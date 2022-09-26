@@ -5,24 +5,38 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fruits: Data,
-      selected: {},
-      name:''
+      mockData: Data,
+      name:'',
+      userName:''
     }
   }
   render() {
-    const onEdit = (value) => {
-      this.setState({ selected: value });
+    const editFunct = (id,name,userName) => {
+      this.setState({
+        mockData: this.state.mockData.map((value) => ({
+          id: value.id,
+          name: value.name,
+          userName: value.userName,
+          hidden:value.id === id ? true : false
+        }))
+      })
+      this.setState({
+        name: name,
+        userName:userName
+      })
     }
 
-    const onChange = (e) => {
-      const { value } = e.target;
-      this.setState({ name : value });
+    const onSave = (id) => {
+      this.setState({
+        mockData: this.state.mockData.map((value) => ({
+          id: value.id,
+          name: value.id === id ? this.state.name : value.name,
+          userName:value.id === id ? this.state.userName : value.userName,
+          hidden: false
+       }))
+     })
     }
-
-    const onSave = () => {
-      this.setState({ selected: this.state.name });
-    }
+    
     return (
     <div>
     <table>
@@ -30,24 +44,30 @@ class Index extends Component {
     <tr>
     <th>ID</th>
     <th>Name</th>
+    <th>userName</th>
     <th>Action</th>
     </tr>           
     </thead>
     <tbody>
        {
-         this.state.fruits.map((value) => (
+         this.state.mockData.map((value) => (
          <tr key={value.id}>
          <td>{value.id}</td>
-         <td>
-          {
-          this.state.selected.id === value.id ? <input name='name' type="text" onChange={onChange} value={this.state.name}/> : value.name
-          }
-         </td>
-         <td>
-         {
-          this.state.selected.id === value.id ? <button onClick={onSave}>Save</button> : <button onClick={() => onEdit(value)}>Edit</button> 
-         }
-         </td>
+             <td>
+               {
+                 value.hidden ? <input type={'text'} value={this.state.name} onChange={(e) => this.setState({name:e.target?.value})} /> : <h3>{value.name}</h3>
+               }
+             </td>
+             <td>
+               {
+                 value.hidden ? <input type={'text'} value={this.state.userName} onChange={(e) => this.setState({userName:e.target?.value})} /> : <h3>{value.userName}</h3>
+               }
+             </td>
+             <td>
+               {
+               value.hidden ? <button onClick={() => onSave(value.id)}>Save</button> : <button onClick={() => editFunct(value.id,value.name,value.userName)}>Edit</button>
+               }
+             </td>
          </tr>
         ))
        }
