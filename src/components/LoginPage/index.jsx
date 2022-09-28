@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Btn, BtnWrap, Container, Divider, InputWrap } from '../LoginPage/style'
+import { Btn, BtnWrap, Container, Divider, Facebook, InputWrap } from '../LoginPage/style'
 
 class LoginPage extends Component {
 
@@ -33,7 +33,7 @@ class LoginPage extends Component {
               border: '2px solid #d1e0e0',
             }}
           >
-            Login with Google
+          <Facebook/>  Login with Google
           </button>
           <button>Login with Google</button>
         </InputWrap>

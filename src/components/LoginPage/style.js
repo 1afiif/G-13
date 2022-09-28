@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { ReactComponent as Faceboo } from '../../assets/faceboook.svg'
 import { ReactComponent as Googl } from '../../assets/googl.svg'
 
-const Facebook = styled('Faceboo');
-const Google = styled('Googl');
+const Facebook = styled(Faceboo)``;
+const Google = styled(Googl);
 
 const Container = styled.div`
   width: 45vw;
