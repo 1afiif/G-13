@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Btn, BtnWrap, Container, Divider, InputWrap, LineWrap } from '../LoginPage/style'
+import { Btn, BtnWrap, Container, Divider, InputWrap } from '../LoginPage/style'
 
 class LoginPage extends Component {
 
@@ -21,9 +21,21 @@ class LoginPage extends Component {
             Forgot Password?
           </p>
           <button>Login</button>
-            <h2>
-              <span>Or login with</span>
-            </h2>
+          <h2>
+            <span>Or login with</span>
+          </h2>
+          <button
+            style={{
+              background: 'white',
+              color: '#527a7a',
+              borderColor: '#527a7a',
+              cursor: 'pointer',
+              border: '2px solid #d1e0e0',
+            }}
+          >
+            Login with Google
+          </button>
+          <button>Login with Google</button>
         </InputWrap>
       </Container>
     );

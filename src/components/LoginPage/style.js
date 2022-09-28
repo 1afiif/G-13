@@ -1,8 +1,13 @@
 import styled from 'styled-components';
+import { ReactComponent as Faceboo } from '../../assets/faceboook.svg'
+import { ReactComponent as Googl } from '../../assets/googl.svg'
+
+const Facebook = styled('Faceboo');
+const Google = styled('Googl');
 
 const Container = styled.div`
   width: 45vw;
-  height: 70vh;
+  height: auto;
   margin: 30px auto;
   border: 5px solid teal;
   padding: 2em;
@@ -96,4 +101,4 @@ const LineWrap = styled.div`
   }
 `;
 
-export { Container, BtnWrap, Btn, Divider, InputWrap,LineWrap};
+export { Container, BtnWrap, Btn, Divider, InputWrap,LineWrap,Google,Facebook};

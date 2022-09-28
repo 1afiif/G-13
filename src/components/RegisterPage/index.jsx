@@ -20,11 +20,10 @@ class RegisterPage extends Component {
           <input type='text' placeholder='Enter your email address' />
           <input type='password' placeholder='Password' />
           <input type='password' placeholder='Confirm Password' />
-          <button
-            style={{ margin: '2em 0' }}>
-            Register
-          </button>
-          <p style={{marginBottom:'10em;'}}>Or register with</p>
+          <button style={{ margin: '2em 0' }}>Register</button>
+          <h2>
+            <span>Or register with</span>
+          </h2>
         </InputWrap>
       </Container>
     );
