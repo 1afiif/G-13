@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Sidebar from '../Sidebar'
 
-class Root extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+const Root = () => {
+  return (
+    <>
+      <Sidebar/>
+    </>
+  )
 }
 
 export default Root
+
