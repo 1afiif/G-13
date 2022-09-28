@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Container,BtnWrap,Btn,Divider,InputWrap} from '../LoginPage/style'
+import {Container,BtnWrap,Btn,Divider,InputWrap,Facebook,Google} from '../LoginPage/style'
 class RegisterPage extends Component {
   render() {
     return (
@@ -24,6 +24,28 @@ class RegisterPage extends Component {
           <h2>
             <span>Or register with</span>
           </h2>
+          <button
+            style={{
+              background: 'white',
+              color: '#527a7a',
+              borderColor: '#527a7a',
+              cursor: 'pointer',
+              border: '2px solid #d1e0e0',
+            }}
+          >
+            <Google /> Login with Google
+          </button>
+          <button
+            style={{
+              background: 'white',
+              color: '#527a7a',
+              borderColor: '#527a7a',
+              cursor: 'pointer',
+              border: '2px solid #d1e0e0',
+            }}
+          >
+            <Facebook /> Login with Google
+          </button>
         </InputWrap>
       </Container>
     );
