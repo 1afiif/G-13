@@ -11,6 +11,7 @@ display: flex;
 align-items: center;
 background: #212121;
 border-bottom: 2px solid rgba(255,255,255,0.2);
+justify-content: space-around;
 `
 const InputWrap = styled.div`
 display: flex;
@@ -33,4 +34,20 @@ InputWrap.Input = styled.input`
 
 InputWrap.Icon = styled(search)``
 
-export {Container,Wrap,InputWrap}
+const Button = styled.button`
+border-radius: 30px;
+font-weight: 400;
+color: black;
+padding: 8px 35px;
+cursor: pointer;
+:active{
+  transform: scale(0.97);
+}
+`
+const active = {
+  background: 'white',
+  color: "black",
+  border:'1px solid white'
+}
+
+export {Container,Wrap,InputWrap,Button,active}

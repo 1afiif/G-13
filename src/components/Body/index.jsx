@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { MovieList } from '../../context'
 import { Container,Card } from './style'
-import {data} from '../../data'
+
 const Body = () => {
-  return (
+    const { movieData, type } = useContext(MovieList);
+    return (
       <Container>
           {
-              data.map((value) => {
-                  console.log(value);
+              movieData.filter((val) => type === 'All' ? true : val.type === type).map((value) => {
                   return <Card key={value.id}>
                       <Card.Img
                           src={value.url}
