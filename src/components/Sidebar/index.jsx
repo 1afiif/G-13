@@ -4,7 +4,7 @@ import { Container } from './style'
 const Sidebar = () => {
   return (
       <Container>
-          index
+          Sidebar
       </Container>
   )
 }
