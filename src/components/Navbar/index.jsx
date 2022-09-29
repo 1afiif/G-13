@@ -1,4 +1,4 @@
-import React, { useContext,useState } from 'react'
+import React, { useContext } from 'react'
 import { MovieList } from '../../context'
 import { data } from '../../data';
 import {category} from '../../category'
@@ -6,27 +6,30 @@ import { Button, Container, InputWrap, Wrap,active } from './style'
 
 export const Navbar = () => {
     const {setmovieData,type,setType} = useContext(MovieList);
-    const [name, setName] = useState('');
+    // const [name, setName] = useState('');
     
     const setChange = (e) => {
         const { value } = e.target;
-        setName(value);
+        let result = data.filter((val) =>
+            val.name.toLowerCase().includes(value?.toLowerCase())
+         );
+         setmovieData(result);
     }
 
-    const setKey = (e) => {
-        if (e.key === 'Enter') {
-          let result = data.filter((val) =>
-            val.name.toLowerCase().includes(name.toLowerCase())
-          );
-          setmovieData(result);
-        }
-    }
+    // const setKey = (e) => {
+    //     if (e.key === 'Enter') {
+    //       let result = data.filter((val) =>
+    //         val.name.toLowerCase().includes(name.toLowerCase())
+    //       );
+    //       setmovieData(result);
+    //     }
+    // }
 
   return (
       <Container>
           <Wrap>
               <InputWrap>
-                  <InputWrap.Input onKeyDown={setKey} onChange={setChange} type={'text'} placeholder={'Search...'} />
+                  <InputWrap.Input  onChange={setChange} type={'text'} placeholder={'Search...'} />
                   <InputWrap.Icon/>
               </InputWrap>
           </Wrap>
