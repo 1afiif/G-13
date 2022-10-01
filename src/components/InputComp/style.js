@@ -7,7 +7,7 @@ import { ReactComponent as Search } from '../../assets/Search.svg'
 
 const Addres = styled(Address)`
 position: absolute;
-left:2.5em;
+left:5.5em;
 `
 const Line = styled(Lines)``
 const Prices = styled(Price)``
