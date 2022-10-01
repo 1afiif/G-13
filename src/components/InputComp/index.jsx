@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Addres, Block, Input, Searc, Status } from './style'
+import { Addres, Block, Input, Searc} from './style'
 
 class InputComp extends Component {
   render() {
