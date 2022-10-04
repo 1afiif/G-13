@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay,Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
-
+// 4minut 2video
 class SwiperCarousel extends Component {
   render() {
     return (
