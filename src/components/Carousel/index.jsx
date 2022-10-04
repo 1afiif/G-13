@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import  Carousel  from 'react-bootstrap/Carousel'
 import { Block } from './style'
+import Image1 from '../../assets/img.png'
+import Image2 from '../../assets/img2.png'
 
 class Slider extends Component {
   render() {
@@ -9,9 +11,9 @@ class Slider extends Component {
         <Carousel>
           <Carousel.Item interval={2000}>
             <img
-              style={{ height: '650px', }}
+              style={{ height: '650px' }}
               className='d-block w-100'
-              src='https://images.pexels.com/photos/5105622/pexels-photo-5105622.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
+              src={Image1}
               alt='First slide'
             />
             <Carousel.Caption>
@@ -23,7 +25,7 @@ class Slider extends Component {
             <img
               style={{ height: '650px' }}
               className='d-block w-100'
-              src='https://images.pexels.com/photos/7031412/pexels-photo-7031412.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
+              src={Image2}
               alt='Second slide'
             />
             <Carousel.Caption>
@@ -35,7 +37,7 @@ class Slider extends Component {
             <img
               style={{ height: '650px' }}
               className='d-block w-100'
-              src='https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
+              src={Image1}
               alt='Third slide'
             />
             <Carousel.Caption>

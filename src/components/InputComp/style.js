@@ -1,18 +1,12 @@
 import styled from 'styled-components'
 import { ReactComponent as Address } from '../../assets/Address.svg'
-import { ReactComponent as Lines } from '../../assets/Lines.svg'
-import { ReactComponent as Price } from '../../assets/Price.svg'
-import { ReactComponent as Statuses } from '../../assets/Status.svg'
 import { ReactComponent as Search } from '../../assets/Search.svg'
 
 const Addres = styled(Address)`
 position: absolute;
 left:5.5em;
 `
-const Line = styled(Lines)``
-const Prices = styled(Price)``
-const Status = styled(Statuses)`
-`;
+
 const Searc = styled(Search)`
 margin-right: 1em;
 `
@@ -50,4 +44,4 @@ const Input = styled.input`
   color: #0d263b;
 `;
 
-export { Block,Line,Addres,Prices,Status,Searc,Input };
+export { Block,Addres,Searc,Input };
