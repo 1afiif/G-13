@@ -5,6 +5,7 @@ import {ReactComponent as btnNext} from '../../assets/next.svg'
 
 const Container = styled.div`
   width: 100%;
+  position: relative;
 `;
 
 const SwiperReact = styled(Swiper)`
