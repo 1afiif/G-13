@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
 import { ReactComponent as Minus } from '../../assets/minus.svg'
+import { ReactComponent as Trash } from '../../assets/delete.svg'
 
 const Container = styled.div`
   width: 400px;
+  height: 480px;
   background-color: #ec8171;
   border-radius: 5px;
   margin: auto;
@@ -15,6 +17,19 @@ Container.Wrapper = styled.div`
     width: 100%;
     position: relative;
 `;
+
+Container.Btn = styled.button`
+   width: 50px;
+   height: 30px;
+   border: none;
+   outline: none;
+   background: none;
+   cursor: pointer;
+   :active{
+    transform: scale(0.90);
+   }
+`
+Container.Trash = styled(Trash)``
 
 Container.Fruits = styled.div`
  width: 100%;
@@ -64,7 +79,7 @@ Container.Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 13px;
 `
 Container.Count = styled.h5`
   font-size: 23px;
@@ -90,5 +105,13 @@ Container.Input = styled.input`
   font-size: 20px;
   color: #ec8171;
 `;
+
+Container.Price = styled.div`
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 0.5em;
+`
 
 export { Container };
