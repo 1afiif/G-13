@@ -8,8 +8,9 @@ const data = [
       price: '7,500/mo',
     },
     date: '30 December 2022',
-    status: 'Pending',
-    view: '5933',
+    status:'Pending',
+    view:'5933',
+    hidden: false,
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const data = [
     date: '30 August 2022',
     status: 'Pending',
     view: '5733',
+    hidden: false,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const data = [
     date: '30 October 2022',
     status: 'Pending',
     view: '5633',
+    hidden: false,
   },
 ];
 
