@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import {ReactComponent as Delete} from '../../assets/Delete.svg'
-import {ReactComponent as Edit} from '../../assets/Edit.svg'
+import styled from 'styled-components';
+import { ReactComponent as Delete } from '../../assets/Delete.svg';
+import { ReactComponent as Edit } from '../../assets/Edit.svg';
+import { ReactComponent as Save } from '../../assets/save.svg';
 const MainWrapper = styled.div`
   padding: 1em 5em;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #0d263b;
-  border: 1px solid black;
 `;
 
 MainWrapper.NavWrap = styled.div`
@@ -58,6 +58,45 @@ MainWrapper.Body = styled.div`
   margin: 1.5em 1.5em;
 `;
 
+MainWrapper.ImgContainer = styled.div`
+  > img {
+    width: 113px;
+    height: 113px;
+  }
+`;
+MainWrapper.TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-right: 10em;
+  h1 {
+    font-size: 16px;
+    font-weight: 600;
+    > input {
+      border: none;
+      outline: none;
+      background: none;
+      border-bottom: 2px solid #e6e9ec;
+      padding-left: 0.5em;
+      width: 200px;
+    }
+  }
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #696969;
+    > input {
+      border: none;
+      outline: none;
+      background: none;
+      border-bottom: 2px solid #e6e9ec;
+      padding-left: 0.5em;
+      width: 200px;
+    }
+  }
+`;
 MainWrapper.Body2 = styled.div`
   width: 58%;
   height: 12vh;
@@ -65,7 +104,6 @@ MainWrapper.Body2 = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0;
-  border: 2px solid black;
   h1 {
     color: #696969;
     font-size: 14px;
@@ -73,23 +111,23 @@ MainWrapper.Body2 = styled.div`
   }
 `;
 
-MainWrapper.DelIcon = styled(Delete)``
-MainWrapper.EdIcon = styled(Edit)``
-
+MainWrapper.DelIcon = styled(Delete)``;
+MainWrapper.EdIcon = styled(Edit)``;
+MainWrapper.SaveIcon = styled(Save)``;
 
 MainWrapper.IconWrap = styled.div`
- display: flex;
- align-items: center;
- gap:1em;
- >button {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  > button {
     outline: none;
     border: none;
     background: none;
     cursor: pointer;
-    :active{
-        transform: scale(0.90);
+    :active {
+      transform: scale(0.9);
     }
- }
-`
+  }
+`;
 
 export { MainWrapper };
