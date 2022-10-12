@@ -1,39 +1,40 @@
 import React, { useReducer } from 'react';
 import { data } from '../data';
+import { reducer } from './reducer';
 
 const UseReducer = () => {
-  //2video 27minut  
-  const [state, dispatch] = useReducer(
-    (state, action) => {
-      switch (action.type) {
-        //Delete case
-        case 'delete':
-          let result = state.mock.filter(
-            (value) => value.id !== action.payload.userId
-          );
-          return { ...state, mock: result };
-        //Search case
-        case 'search':
-          let searchUser = data?.filter((value) => value?.status?.toLowerCase()?.includes(action?.payload?.eventVal));
-          return {...state, mock:searchUser}
-        default:
-          return state.mock;
-      }
-    },
+  const [state, dispatch] = useReducer(reducer,
     {
       mock: data,
+      selected: 'name',
+      Id: null,
+      name: '',
+      status: '',
     }
   );
   return (
     <div style={{ flex: 1 }}>
       <h1>UseReducer</h1>
-      <input type="text"
+      <input
+        type='text'
         placeholder='Search...'
         onChange={(e) =>
           dispatch({
             type: 'search',
-            payload: { eventVal: e.target.value }
-          })} />
+            payload: { inputVal: e.target.value },
+          })
+        }
+      />
+      <select
+        style={{ marginLeft: '10px' }}
+        onChange={(e) =>
+          dispatch({ type: 'select', payload: { selectVal: e.target.value } })
+        }
+      >
+        <option value='id'>ID</option>
+        <option value='name'>Name</option>
+        <option value='status'>Status</option>
+      </select>
       <table border={1}>
         <thead>
           <tr>
@@ -48,8 +49,53 @@ const UseReducer = () => {
             return (
               <tr key={value.id}>
                 <td>{value?.id}</td>
-                <td>{value?.name}</td>
-                <td>{value?.status}</td>
+                <td>
+                  {state.Id === value.id ? (
+                    <input
+                      type={'text'}
+                      value={state.name}
+                      onChange={(e) =>
+                      dispatch({
+                      type: 'name',
+                      payload: { nameEvent: e.target.value }})}/>
+                  ) : (value?.name)}
+                </td>
+                <td>
+                  {state.Id === value.id ? (
+                    <input
+                      type={'text'}
+                      value={state.status}
+                      onChange={(e) =>
+                        dispatch({
+                          type: 'status',
+                          payload: { statusEvent: e.target.value },
+                        })
+                      }
+                    />
+                  ) : (
+                    value?.status
+                  )}
+                </td>
+                <td>
+                  {state.Id === value.id ? (
+                    <button onClick={() => dispatch({type: 'save'})}>Save</button>
+                  ) : (
+                    <button
+                      onClick={() =>
+                        dispatch({
+                          type: 'edit',
+                          payload: {
+                          userId: value.id,
+                          userName: value.name,
+                          userStatus: value.status,
+                          },
+                        })
+                      }
+                    >
+                      Edit
+                    </button>
+                  )}
+                </td>
                 <td>
                   <button
                     onClick={() =>
