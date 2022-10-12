@@ -22,15 +22,12 @@ const UseReducer = () => {
           dispatch({
             type: 'search',
             payload: { inputVal: e.target.value },
-          })
-        }
-      />
+       })}/>
       <select
         style={{ marginLeft: '10px' }}
         onChange={(e) =>
           dispatch({ type: 'select', payload: { selectVal: e.target.value } })
-        }
-      >
+      }>
         <option value='id'>ID</option>
         <option value='name'>Name</option>
         <option value='status'>Status</option>
@@ -68,10 +65,7 @@ const UseReducer = () => {
                       onChange={(e) =>
                         dispatch({
                           type: 'status',
-                          payload: { statusEvent: e.target.value },
-                        })
-                      }
-                    />
+                          payload: { statusEvent: e.target.value }})}/>
                   ) : (
                     value?.status
                   )}
@@ -88,27 +82,18 @@ const UseReducer = () => {
                           userId: value.id,
                           userName: value.name,
                           userStatus: value.status,
-                          },
-                        })
-                      }
-                    >
-                      Edit
-                    </button>
-                  )}
+                          }})}>Edit</button>
+            )}
                 </td>
                 <td>
                   <button
                     onClick={() =>
                       dispatch({
                         type: 'delete',
-                        payload: { userId: value?.id },
-                      })
-                    }
-                  >
-                    Delete
-                  </button>
+                        payload: { userId: value?.id }})}>
+                    Delete</button>
                 </td>
-              </tr>
+            </tr>
             );
           })}
         </tbody>
