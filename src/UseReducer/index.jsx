@@ -1,17 +1,17 @@
 import React, { useReducer } from 'react';
-import { data } from '../data';
 import { reducer } from './reducer';
 
 const UseReducer = () => {
   const [state, dispatch] = useReducer(reducer,
     {
-      mock: data,
+      mock: localStorage.getItem('data') && JSON.parse(localStorage.getItem('data')),
       selected: 'name',
       Id: null,
       name: '',
       status: '',
     }
   );
+  localStorage.setItem('data', JSON.stringify(state.mock));
   return (
     <div style={{ flex: 1 }}>
       <h1>UseReducer</h1>
