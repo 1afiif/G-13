@@ -1,8 +1,16 @@
 import React from 'react'
+import Context from '../context'
+import Navbar from '../components/Navbar'
+import UseContext from '../components/UseContext'
 
 const Root = () => {
   return (
-    <div>Root</div>
+    <>
+      <Context>
+        <Navbar />
+        <UseContext/>
+      </Context>
+    </>
   )
 }
 
