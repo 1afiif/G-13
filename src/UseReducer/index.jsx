@@ -1,17 +1,8 @@
-import React, { useReducer } from 'react';
-import { reducer } from './reducer';
+import React, { useContext } from 'react';
+import { StudentsContext } from '../context';
 
 const UseReducer = () => {
-  const [state, dispatch] = useReducer(reducer,
-    {
-      mock: localStorage.getItem('data') && JSON.parse(localStorage.getItem('data')),
-      selected: 'name',
-      Id: null,
-      name: '',
-      status: '',
-    }
-  );
-  localStorage.setItem('data', JSON.stringify(state.mock));
+  const [state, dispatch] = useContext(StudentsContext);
   return (
     <div style={{ flex: 1 }}>
       <h1>UseReducer</h1>
