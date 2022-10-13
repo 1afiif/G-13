@@ -1,36 +1,38 @@
-import React, { useState } from 'react';
-import { data } from '../../data';
+import React, { useContext } from 'react';
+import { Productname } from '../../context';
 import { Container } from './style';
 
 const Products = () => {
+  const [state, dispatch] = useContext(Productname);
   
+  let total = 0
+  let totalPrice = 0
   return (
     <Container>
       <Container.Wrapper>
-        <Container.Input type={'text'} placeholder='Add an Item ...' />
-        <Container.Icon />
+        <h1>Total Product Name : {state.mock.length}</h1>
       </Container.Wrapper>
       <Container.Fruits>
-        {state.map((value) => {
+        {state.mock.map((value) => {
           total += value.quantity;
           totalPrice += value.quantity * value.price;
           return (
             <Container.Block key={value.id}>
               <Container.Checkbox
                 type='checkbox'
-                onChange={(e) => OnChecked(e, value.id)}
+               
               />
-              <Container.Title check={value.id === ids ? check : 0}>
+              <Container.Title>
                 {value.name}
               </Container.Title>
               <Container.Title>${value.price}</Container.Title>
               <Container.Box>
-                <Container.Btn onClick={() => Delete(value.id)}>
+                <Container.Btn onClick={() => dispatch({type:'delete',payload:{userId:value.id}})}>
                   <Container.Trash />
                 </Container.Btn>
-                <Container.Plus onClick={() => increment(value.id)} />
+                <Container.Plus onClick={() => dispatch({type:'increment', payload:{userId:value.id}})} />
                 <Container.Count>{value.quantity}</Container.Count>
-                <Container.Minus onClick={() => decrement(value.id)} />
+                <Container.Minus onClick={() => dispatch({type:'decrement',payload:{userId:value.id}})} />
               </Container.Box>
             </Container.Block>
           );
