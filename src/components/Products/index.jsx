@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
-import { Productname } from '../../context';
+import { Productname } from '../context';
 import { Container } from './style';
 
 const Products = () => {
   const [state, dispatch] = useContext(Productname);
-  
   let total = 0
   let totalPrice = 0
   return (
