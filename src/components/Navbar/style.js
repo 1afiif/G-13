@@ -27,6 +27,10 @@ Container.Link = styled.p`
 `
 Container.IconWrap = styled.div`
   position: relative;
+  cursor: pointer;
+  :active{
+    transform: scale(0.96);
+  }
 `
 Container.Counter = styled.p`
   font-size: 12px;
