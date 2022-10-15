@@ -55,12 +55,12 @@ Container.CardText = styled.div`
     border-radius: 3px;
     background: #46a358;
     color: white;
-    width: 80px;
+    width: 90px;
     height: 30px;
     outline: none;
     border: none;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     cursor: pointer;
     :active{
         transform: scale(0.95);

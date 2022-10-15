@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import { PlantApp } from '../../context'
+import { Container } from './style';
 
 const AddedProducts = () => {
   const [state] = useContext(PlantApp);
   
   return (
-    <div style={{background:'red',padding:'0',margin:'0'}}>
+  <Container>
      <h4>Added Products</h4>
      {
       state?.products?.map((value) => {
@@ -15,7 +16,7 @@ const AddedProducts = () => {
         )
       })
      }
-    </div>
+  </Container>
   )
 }
 
