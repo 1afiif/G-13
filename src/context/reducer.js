@@ -6,7 +6,6 @@ export const reducer = (state, action) => {
          let added = [...state.products, ...output];
          return { ...state, products: added };
      case 'basket':
-         console.log(state.basket);
          return { ...state, basket: !state.basket }
      default:
        return state

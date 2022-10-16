@@ -7,7 +7,7 @@ const Products = () => {
   const [state, dispatch] = useContext(PlantApp);
   return (
     <Container>
-      <Container.Title>Products</Container.Title>
+      <Container.Title>GreenShop Products</Container.Title>
       {
         state.basket ? ( <AddedProducts/> ) : (
           <Container.Wrapper>
