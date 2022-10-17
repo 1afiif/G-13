@@ -10,6 +10,15 @@ export const reducer = (state, action) => {
          return { ...state, products: added, mock:reset };
      case 'basket':
          return { ...state, basket: !state.basket }
+     case 'delete':
+         let result = state?.products?.filter((value) => value.id !== action.payload.id);
+         return { ...state, products: result };
+     case 'increment':
+         let addNum = state?.products?.map((value) => value.id === action.payload.id ? { ...value, quantity: value.quantity + 1 } : value);
+         return { ...state, products: addNum };
+     case 'decrement':
+         let reduceNum = state?.products?.map((value) => value.id === action.payload.id && value?.quantity > 1 ? { ...value, quantity: value?.quantity - 1 } : value);
+         return { ...state, products: reduceNum };
      default:
        return state
  }

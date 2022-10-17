@@ -3,8 +3,8 @@ import { PlantApp } from '../../context'
 import { Container, IconWrap,Btn } from './style';
 
 const AddedProducts = () => {
-  const [state] = useContext(PlantApp);
-  
+  const [state,dispatch] = useContext(PlantApp);
+  let total = 0
   return (
   <Container>
    <Container.Header>
@@ -18,6 +18,7 @@ const AddedProducts = () => {
    </Container.Header>
    {
     state?.products?.map((value) => {
+    total += value?.price * value?.quantity
       return(
         <Container.Body key={value.id}>
          <Container.ImgContainer>
@@ -29,19 +30,20 @@ const AddedProducts = () => {
         <Container.Body2>
         <h1>${value.price}.00</h1>
         <Container.IconWrap>
-        <button><IconWrap.PlusIcon/></button>
+        <button onClick={() => dispatch({type:'increment',payload:{id:value.id}})}><IconWrap.PlusIcon/></button>
         <h1 style={{color:'black'}}>{value.quantity}</h1>  
-        <button><IconWrap.MinusIcon/></button>
+        <button onClick={() => dispatch({type:'decrement',payload:{id:value.id}})}><IconWrap.MinusIcon/></button>
         </Container.IconWrap>    
         <Container.IconWrap>
-        <h1>${value.price}.00</h1>
-        <button><IconWrap.DeleteIcon/></button>
+        <h1>${value?.price}.00</h1>
+        <button onClick={() => dispatch({type:'delete',payload:{id:value.id}})}><IconWrap.DeleteIcon/></button>
         </Container.IconWrap>
         </Container.Body2>
         </Container.Body>
       )
     })
-  }
+      }
+   <h1>Total Price: ${total}.00</h1>
   <Btn>Buy</Btn>
   </Container>
   )

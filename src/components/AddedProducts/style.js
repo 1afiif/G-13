@@ -16,6 +16,9 @@ IconWrap.DeleteIcon = styled(Trash)`
 
 const Container = styled.div`
   width: 80%;
+  h1 {
+  margin: 2em 0em;
+  }
 `
 Container.Header = styled.div`
   display: flex;
