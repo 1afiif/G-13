@@ -1,12 +1,13 @@
 import React from 'react'
-// import Child from '../components/Child'
-import Parent from '../components/Parent'
+import Controlled from '../components/Controlled'
+import Uncontrolled from '../components/Uncontrolled'
 
 const Root = () => {
   return (
-      <>
-          <Parent />
-      </>
+      <div style={{display:'flex'}}>
+      <Controlled />
+      <Uncontrolled/>
+      </div>
   )
 }
 
