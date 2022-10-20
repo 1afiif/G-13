@@ -22,7 +22,7 @@ const Products = () => {
               <h5>{value.title}</h5>
               <div>
               <h4>${value.price}.00</h4>
-              {value.addtocart ? <button>Cancel</button> : <button onClick={() => dispatch({type:'add',payload:{id:value.id}})}>Add To Cart</button>}
+              {value.addtocart ? <button onClick={() => dispatch({type:'cancel',payload:{id:value.id}})}>Cancel</button> : <button onClick={() => dispatch({type:'add',payload:{id:value.id}})}>Add To Cart</button>}
               </div>
               </Container.CardText>
             </Container.Card>

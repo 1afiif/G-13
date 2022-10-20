@@ -1,9 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext,useState } from 'react'
 import { PlantApp } from '../../context'
 import { Container, IconWrap,Btn } from './style';
 
 const AddedProducts = () => {
-  const [state,dispatch] = useContext(PlantApp);
+  const [state, dispatch] = useContext(PlantApp);
+  const initialText = 'Buy';
+  const [btnText, setBtnText] = useState(initialText);
+
+  const handleClick = () => {
+    alert('Products Purchased');
+    setBtnText('Loading...');
+
+    setTimeout(() => {
+      setBtnText(initialText);
+    }, 1500);
+
+  }
   let total = 0
   return (
   <Container>
@@ -44,7 +56,7 @@ const AddedProducts = () => {
     })
       }
    <h1>Total Price: ${total}.00</h1>
-  <Btn>Buy</Btn>
+  <Btn onClick={handleClick}>{btnText}</Btn>
   </Container>
   )
 }

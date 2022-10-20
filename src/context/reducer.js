@@ -6,8 +6,10 @@ export const reducer = (state, action) => {
          output = output.filter((value) => value && value);
          let added = [...state.products, ...output];
          let reset = state?.mock?.map((value) => value.id === action.payload.id ? output[0] : value);
-         console.log(reset,'reset');
-         return { ...state, products: added, mock:reset };
+         return { ...state, products: added, mock: reset };
+     case 'cancel':
+         let outcome = state?.mock?.map((value) => value.id === action.payload.id ? { ...value, addtocart: false, quantity: 0 } : value);
+         return { ...state, mock: outcome, products:[] };
      case 'basket':
          return { ...state, basket: !state.basket }
      case 'delete':

@@ -102,7 +102,7 @@ const Btn = styled.button`
     height: 40px;
     outline: none;
     border: none;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     :active {
