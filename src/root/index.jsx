@@ -5,7 +5,7 @@ import Fetch from '../components/Fetch'
 const Root = () => {
   return (
     <>
-          <Fetch />
+          {/* <Fetch /> */}
           <Axios/>
     </>
   )
