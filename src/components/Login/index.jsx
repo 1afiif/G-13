@@ -23,7 +23,6 @@ const Login = () => {
   }
   
   const login = () => {
-    console.log(emailRef.current.value, passwordRef.current.value);
       getData();
   } 
   return (
