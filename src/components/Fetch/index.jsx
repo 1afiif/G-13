@@ -31,6 +31,7 @@ const Fetch = () => {
           {value?.id} - {value?.name} - {value?.address} - {value?.category?.name}           
            <img width={'300px'} src={value?.attachments[0].imgPath} alt="img" />
            <button onClick={() => houseDelete(value.id)}>Delete {value.id}</button>
+           <button onClick={() => localStorage.setItem('edit',value.id)}>Edit {value.id}</button>
         </div>
        )        
     })
