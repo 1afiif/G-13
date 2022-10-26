@@ -1,10 +1,17 @@
 import React from 'react'
+import { Container, Login, Logo, NavItem, NavItems } from './style';
 
 const Navbar = () => {
   return (
-    <div>
-     
-    </div>
+    <Container>
+        <Logo>Logo</Logo>
+        <NavItems>
+          <NavItem>Home</NavItem>
+          <NavItem>Products</NavItem>
+          <NavItem>About</NavItem>
+          </NavItems>
+          <Login>Login</Login>
+    </Container>
   );
 }
 
