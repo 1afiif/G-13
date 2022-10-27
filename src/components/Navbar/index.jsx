@@ -1,8 +1,9 @@
 import React from 'react'
 import { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { PlantApp } from '../../context';
 import { Container } from './style'
-//3vid 3min
+
 const Navbar = () => {
   const [state,dispatch] = useContext(PlantApp);
   return (
@@ -11,8 +12,12 @@ const Navbar = () => {
         <Container.LogoIcon />
         <Container.Logo>GreenShop</Container.Logo>
       </div>
-      <Container.Link>Home</Container.Link>
-      <Container.Link>Shop</Container.Link>
+      <NavLink to={'/products'} style={{ textDecoration: 'none' }}>
+        <Container.Link>Home</Container.Link>
+      </NavLink>
+      <NavLink to={'/AddedProducts'} style={{ textDecoration: 'none' }}>
+        <Container.Link>Shop</Container.Link>
+      </NavLink>
       <Container.IconWrap onClick={() => dispatch({ type: 'basket' })}>
         <Container.Icon />
         <Container.Counter>{state.products.length}</Container.Counter>

@@ -21,10 +21,12 @@ Container.Link = styled.p`
   color: white;
   font-weight: 400;
   cursor: pointer;
-  :active{
+  list-style-type: none;
+  :active {
     transform: scale(0.96);
   }
-`
+  
+`;
 Container.IconWrap = styled.div`
   position: relative;
   cursor: pointer;
