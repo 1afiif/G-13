@@ -1,16 +1,23 @@
 import React from 'react'
 import { Container, Login, Logo, NavItem, NavItems } from './style';
-
 const Navbar = () => {
   return (
     <Container>
+      <NavItem to={'/lgo'}>
         <Logo>Logo</Logo>
-        <NavItems>
-          <NavItem>Home</NavItem>
-          <NavItem>Products</NavItem>
-          <NavItem>About</NavItem>
-          </NavItems>
-          <Login>Login</Login>
+      </NavItem>
+      <NavItems>
+        <NavItem activeStyle={{ color: 'crimson' }} to='/home'>
+          Home
+        </NavItem>
+        <NavItem activeStyle={{ color: 'crimson' }} to='/products'>
+          Products
+        </NavItem>
+        <NavItem activeStyle={{ color: 'crimson' }} to='about'>
+          About
+        </NavItem>
+      </NavItems>
+      <Login>Login</Login>
     </Container>
   );
 }

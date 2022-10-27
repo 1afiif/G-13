@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -8,6 +9,7 @@ const Container = styled.div`
   align-items: center;
   gap: 60px;
   justify-content: space-around;
+  padding: 0 130px;
 `
 
 const Logo = styled.div`
@@ -19,12 +21,14 @@ const NavItems = styled.ul`
    display: flex;
    align-items: center;
    gap:50px;
+   
 `
-const NavItem = styled.li`
+const NavItem = styled(NavLink)`
    font-size: 24px;
    font-weight: 700;
    color:#fff;
    list-style-type: none;
+   text-decoration: none;
    `
 
 const Login = styled.div`
