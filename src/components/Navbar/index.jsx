@@ -18,10 +18,12 @@ const Navbar = () => {
       <NavLink to={'/AddedProducts'} style={{ textDecoration: 'none' }}>
         <Container.Link>Shop</Container.Link>
       </NavLink>
-      <Container.IconWrap onClick={() => dispatch({ type: 'basket' })}>
-        <Container.Icon />
-        <Container.Counter>{state.products.length}</Container.Counter>
-      </Container.IconWrap>
+      <NavLink to={'/AddedProducts'}>
+        <Container.IconWrap onClick={() => dispatch({ type: 'basket' })}>
+          <Container.Icon />
+          <Container.Counter>{state.products.length}</Container.Counter>
+        </Container.IconWrap>
+      </NavLink>
     </Container>
   );
 }

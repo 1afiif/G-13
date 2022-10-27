@@ -6,15 +6,13 @@ export const PlantApp = createContext();
 
 const Context = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, {
-    // mock: localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : data,
-    mock:data,
-    // products: localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [],
-    products:[],
+    mock: localStorage.getItem('data') ? JSON.parse(localStorage.getItem('data')) : data,
+    products: localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [],
     basket:false 
   },)
 
-  // localStorage.setItem('data', JSON.stringify(state.mock));
-  // localStorage.setItem('products', JSON.stringify(state.products));
+  localStorage.setItem('data', JSON.stringify(state.mock));
+  localStorage.setItem('products', JSON.stringify(state.products));
 
   return (
     <PlantApp.Provider value={[state,dispatch]}>

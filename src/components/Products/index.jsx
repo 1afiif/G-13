@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { PlantApp } from '../../context';
-import AddedProducts from '../AddedProducts';
 import { Container } from './style'
 
 const Products = () => {
@@ -8,8 +7,6 @@ const Products = () => {
   return (
     <Container>
       <Container.Title>GreenShop Products</Container.Title>
-      {
-        state.basket ? ( <AddedProducts/> ) : (
           <Container.Wrapper>
           {
           state?.mock?.map((value) => {
@@ -30,8 +27,8 @@ const Products = () => {
           })
             }  
           </Container.Wrapper>
-  )
-          }
+  
+          
     </Container>
   )
 }
