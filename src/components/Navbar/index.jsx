@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { Container, Nav } from './style'
+
 const Navbar = () => {
   return (
     <Container>
